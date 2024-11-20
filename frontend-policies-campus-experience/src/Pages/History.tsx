@@ -14,6 +14,7 @@ const History: FC = () => {
 
   useEffect(() => {
     const fetchPolicies = async () => {
+      setPolicies([]);
       try {
         const response = await fetch(
           import.meta.env.VITE_API + `/policies?year=${selectedYear}`
@@ -40,9 +41,8 @@ const History: FC = () => {
           <button
             key={year}
             onClick={() => setSelectedYear(year)}
-            className={`py-2 px-4 rounded-md text-sm font-semibold ${
-              selectedYear === year ? "bg-blue-600 text-white" : "bg-gray-200"
-            }`}
+            className={`py-2 px-4 rounded-md text-sm font-semibold ${selectedYear === year ? "bg-blue-600 text-white" : "bg-gray-200"
+              }`}
           >
             {year}
           </button>

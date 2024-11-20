@@ -42,12 +42,15 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
 
       if (token) {
         try {
-          const response = await fetch(import.meta.env.VITE_API+"/auth/user", {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          });
+          const response = await fetch(
+            import.meta.env.VITE_API + "/auth/user",
+            {
+              method: "GET",
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
 
           if (!response.ok) {
             throw new Error("Failed to fetch user data");
@@ -74,7 +77,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
 
   const signup = async (name: string, email: string, password: string) => {
     try {
-      const response = await fetch(import.meta.env.VITE_API+"/auth/signup", {
+      const response = await fetch(import.meta.env.VITE_API + "/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -87,10 +90,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
         throw new Error(errorData.error || "Registration failed");
       }
 
-      const { token } = await response.json();
+      const { token, id } = await response.json();
       saveAccessToken(token);
       setState((prevState) => ({
         ...prevState,
+        isAuth: true,
+        id,
         name,
         email,
         password,
@@ -102,7 +107,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
 
   const signin = async (email: string, password: string) => {
     try {
-      const response = await fetch(import.meta.env.VITE_API+"/auth/signin", {
+      const response = await fetch(import.meta.env.VITE_API + "/auth/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

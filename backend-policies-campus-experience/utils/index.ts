@@ -38,8 +38,8 @@ export const authMiddleware: RequestHandler<unknown, { error: string }> = (
   }
 };
 
-const userFilePath = path.join(__dirname, "usersData.json");
-const policiesFilePath = path.join(__dirname, "policiesData.json");
+const userFilePath = path.resolve(process.cwd(), "utils", "usersData.json");
+const policiesFilePath = path.resolve(process.cwd(), "utils", "policiesData.json");
 
 const checkAndCreatePoliciesFile = async (): Promise<void> => {
   try {
