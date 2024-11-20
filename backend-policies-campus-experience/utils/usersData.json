@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1731981706359,
+    "email": "test@gmail.com",
+    "name": "test123",
+    "password": "$2b$10$pT8C.gM4hfhQVJ0QzgFCOuvoThEEb67gb78JVQp4ps.PEe9JNJZn2"
+  },
+  {
+    "id": 1731981771041,
+    "email": "test1@gmail.com",
+    "name": "test",
+    "password": "$2b$10$uS0KPvRDVPynEKsLCjrROeuavM/GvY2XJdyfpgQubPzlji7T/CyPu"
+  },
+  {
+    "id": 1732061715254,
+    "email": "coolkanchan.shaw@gmail.com",
+    "name": "kanchan shaw",
+    "password": "$2b$10$4YYa2ecuAgazc3EXC2EmZOhfq6QXELwA5hRfbeMwMPRm699YBgpPm"
+  },
+  {
+    "id": 1732061986035,
+    "email": "yoyo@gmail.com",
+    "name": "yoyo",
+    "password": "$2b$10$j81Jmn5dbYh.pHNevJEoBOPD27LQMPyZixWo/RJJAgX93tQH6HTpK"
+  }
+]
